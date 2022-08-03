@@ -13,7 +13,7 @@
 </p>
 
 ## 🔮 Live Demo (Animation GIF)
-<img src="https://github.com/phu0n9/hotelPal/blob/main/photo/icon.png?raw=true" width="200" >
+<img src="https://github.com/phu0n9/hotelPal/blob/main/photo/app.gif?raw=true" width="250" >
 
 ## Instalation:
 - Pull this repository
