@@ -1,9 +1,14 @@
-//
-//  ItemView.swift
-//  hotelPal
-//
-//  Created by Nguyen Huynh Phuong Anh on 25/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Huynh Anh Phuong
+  ID: s3695662
+  Created  date: 22/07/2022
+  Last modified: 03/08/2022
+  Acknowledgement: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
+*/
 
 import SwiftUI
 import MapKit
@@ -13,6 +18,7 @@ struct ItemView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            // MARK: hotel image
             AsyncImage(url: URL(string: self.hotel.image)) { image in
                 image
                     .resizable()
@@ -21,6 +27,7 @@ struct ItemView: View {
                 ProgressView()
             }
             
+            // MARK: hotel information
             VStack{
                 Text(self.hotel.name)
                     .fontWeight(.bold)

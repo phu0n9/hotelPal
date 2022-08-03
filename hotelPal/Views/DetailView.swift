@@ -1,9 +1,14 @@
-//
-//  DetailView.swift
-//  hotelPal
-//
-//  Created by Nguyen Huynh Phuong Anh on 25/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Huynh Anh Phuong
+  ID: s3695662
+  Created  date: 22/07/2022
+  Last modified: 03/08/2022
+  Acknowledgement: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
+*/
 
 import SwiftUI
 import MapKit
@@ -18,6 +23,7 @@ struct DetailView: View {
     var body: some View {
         NavigationView{
             ScrollView{
+                // MARK: Hotel Images
                 VStack(alignment: .leading){
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(alignment: .top,spacing: 10) {
@@ -26,12 +32,14 @@ struct DetailView: View {
                             }
                         }
                     }
-                        
+                    
+                    // MARK: hotel name
                     Text(hotel.name)
                         .fontWeight(.bold)
                         .font(.custom("Changa", fixedSize: 30))
                         .padding(.horizontal, 20)
                     
+                    // MARK: hotel information
                     HStack{
                         HStack(alignment: .firstTextBaseline){
                             Image(systemName: "star.fill")
@@ -46,6 +54,7 @@ struct DetailView: View {
                         .font(.custom("constand", fixedSize: 25))
                         .padding(.horizontal, 20)
                     
+                    // MARK: hotel review
                     if let hotelReview = self.networkManager.hotelReview{
                         ReviewView(hotelReview: hotelReview)
                     }

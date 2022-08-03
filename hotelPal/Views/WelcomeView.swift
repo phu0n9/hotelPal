@@ -1,8 +1,14 @@
-//
-//  WelcomeView.swift
-//
-//  Created by Nguyen Huynh Phuong Anh on 16/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Huynh Anh Phuong
+  ID: s3695662
+  Created  date: 22/07/2022
+  Last modified: 03/08/2022
+  Acknowledgement: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
+*/
 
 import SwiftUI
 
@@ -16,6 +22,7 @@ struct WelcomeView: View {
             MainView()
         } else {
             ZStack{
+                // MARK: ICON
                 Image("splash-screen")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -28,6 +35,7 @@ struct WelcomeView: View {
                             }
                         }
                     }
+                // MARK: TEXT
                 BlurView(text: "Hotel Pal", textSize: 50, startTime: 3.0, fontFamily: "Changa", offSetValue: 70)
                 
                 
@@ -45,6 +53,8 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        Group {
+            WelcomeView()
+        }
     }
 }

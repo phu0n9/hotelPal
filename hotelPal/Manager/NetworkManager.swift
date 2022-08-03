@@ -1,9 +1,14 @@
-//
-//  NetworkManager.swift
-//  hotelPal
-//
-//  Created by Nguyen Huynh Phuong Anh on 23/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Huynh Anh Phuong
+  ID: s3695662
+  Created  date: 22/07/2022
+  Last modified: 03/08/2022
+  Acknowledgement: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
+*/
 
 import MapKit
 
@@ -27,6 +32,7 @@ class NetworkManager: ObservableObject{
         self.locationManager = locationManager
     }
     
+    // MARK: fetch near by hotels
     func fetchNearByHotels(locationManager: LocationManager) {
         if let location = locationManager.location {
             let lat: String = String(format: "%f", location.coordinate.latitude)
@@ -67,6 +73,8 @@ class NetworkManager: ObservableObject{
                         do{
                             let result = try decoder.decode(Response.self, from: safeData)
                             var hotelItems : [Hotel] = [Hotel]()
+                            
+                            #warning("Assigning hotel result from API in the background")
                             DispatchQueue.main.async {
                                 if let searchResults = result.searchResults{
                                     for res in searchResults.results{
@@ -92,6 +100,7 @@ class NetworkManager: ObservableObject{
         }
     }
     
+    // MARK: fetch hotel image by id
     func fetchHotelImageById(id: Int64){
         let baseURL = urlAddress.hotelImage
         let queryItems = [URLQueryItem(name: "hotel_id", value: String(id))]
@@ -123,6 +132,7 @@ class NetworkManager: ObservableObject{
         task.resume()
     }
     
+    // MARK: fetch hotel review
     func fetchHotelReview(id: Int64){
         let baseURL = urlAddress.hotelReview
         let queryItems = [URLQueryItem(name: "hotel_id", value: String(id)),

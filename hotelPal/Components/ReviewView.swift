@@ -1,41 +1,20 @@
-//
-//  ReviewView.swift
-//  hotelPal
-//
-//  Created by Nguyen Huynh Phuong Anh on 26/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Huynh Anh Phuong
+  ID: s3695662
+  Created  date: 22/07/2022
+  Last modified: 03/08/2022
+  Acknowledgement: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
+*/
 
 import SwiftUI
-
-enum RatingRange{
-    static let veryGood = 9.0...10
-    static let good = 7.0..<9.0
-    static let medium = 6.0..<8.0
-    static let bad = 5.0..<7.0
-    static let veryBad = ..<5.0
-    case outOfRange
-}
 
 struct ReviewView: View {
     
     var hotelReview: OverView
-    
-    private func displayEmoji(for value: Double) -> Text {
-        switch value {
-        case RatingRange.veryGood:
-            return Text( "\(String(format: "%.1f", value)) 👏")
-        case RatingRange.good:
-            return Text("\(String(format: "%.1f", value)) 👍")
-            case RatingRange.medium:
-                return Text("\(String(format: "%.1f", value)) 😐")
-            case RatingRange.bad:
-                return Text( "\(String(format: "%.1f", value)) 👎")
-        case RatingRange.veryBad:
-            return Text( "\(String(format: "%.1f", value)) 😵")
-            default:
-                fatalError("Invalid double value")
-        }
-    }
     
     private func reviewTitle(title: String,number: Double,offSet: CGFloat) -> AnyView{
         return AnyView(HStack(alignment: .firstTextBaseline){
@@ -43,7 +22,8 @@ struct ReviewView: View {
                 .font(.custom("constan", fixedSize: 15))
                 .padding(.horizontal, 5)
             Spacer()
-            displayEmoji(for: number)
+            StarsView(rating: number / 2.0)
+            Text("\(String(format: "%.1f", number / 2.0))")
         }
         .offset(y: offSet))
     }
