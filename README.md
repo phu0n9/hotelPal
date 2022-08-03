@@ -6,14 +6,20 @@
 - API data from https://rapidapi.com/tipsters/api/hotels-com-provider/details
 
 <p align="center">
-  <img src="https://i.imgur.com/tyRPWoU.png" width="200" > 
-  <img src="https://i.imgur.com/pKrM1Hq.png" width="200" > 
-  <img src="https://i.imgur.com/fUnVWV4.png" width="200" > 
-  <img src="https://i.imgur.com/2nkYjyf.png" width="200" >
+  <img src="https://github.com/phu0n9/hotelPal/blob/main/photo/welcomeView.png?raw=true" width="200"> 
+  <img src="https://github.com/phu0n9/hotelPal/blob/main/photo/mainView.png?raw=true" width="200" > 
+  <img src="https://github.com/phu0n9/hotelPal/blob/main/photo/detailView.png?raw=true" width="200" > 
+  <img src="https://github.com/phu0n9/hotelPal/blob/main/photo/icon.png?raw=true" width="200" >
 </p>
 
 ## 🔮 Live Demo (Animation GIF)
+<img src="https://github.com/phu0n9/hotelPal/blob/main/photo/icon.png?raw=true" width="200" >
 
+## Instalation:
+- Pull this repository
+- Go to `Product`> `Scheme` > `Edit Scheme`
+- In `Run` window, choose `Arguments` tab
+- Insert environment variables listed in the `.pdf` file
 
 ## 🔧 Build Information
 - Xcode 13.4.1
